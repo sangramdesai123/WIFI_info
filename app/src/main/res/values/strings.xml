@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WifiStrength</string>
+    <string name="get">Get</string>
+    <string name="list">List</string>
+    <string name="info">info</string>
+    <string name="loop">loop</string>
+    <string name="save">Save</string>
+    <string name="load">Load</string>
+</resources>
