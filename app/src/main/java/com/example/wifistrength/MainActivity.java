@@ -5,9 +5,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,11 +18,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.TimerTask;
 
@@ -28,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     TextView textView2;
     TextView textView3;
+    TextView textView4;
     int ll=0;
     static final String FILE_NAME = "example.txt";
 
@@ -41,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         textView=(TextView)findViewById(R.id.textView);
         textView2=(TextView)findViewById(R.id.textView2);
         textView3=(TextView)findViewById(R.id.textView3);
+        textView4=(TextView)findViewById(R.id.textView4);
         String x="";
         List<ScanResult> list= wifiManager.getScanResults();
         /*list of all net*/
@@ -68,8 +75,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void save(View v){
-        String text=textView.getText().toString();
+        String text=textView4.getText().toString();
         FileOutputStream fos=null;
+        File filepath=getExternalFilesDir("sangram");
+        File file = new File(filepath, "sangram.txt");
+        try {
+            fos = new FileOutputStream(file);
+            fos.write(text.toString().getBytes());
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         try {
             fos=openFileOutput(FILE_NAME,MODE_PRIVATE);
             fos.write(text.getBytes());
@@ -89,7 +105,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+    public void display(View view) {
+        File file = new File(Environment.getExternalStorageDirectory(),"sangram.txt");
 
+        Uri selectedUri = Uri.parse(file.getAbsolutePath());
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setDataAndType(selectedUri, "text/csv");
+
+        if (intent.resolveActivityInfo(getPackageManager(), 0) != null)
+        {
+            startActivity(intent);
+        }
+    }
     public void load(View v){
         FileInputStream fis=null;
         try {
@@ -143,7 +170,9 @@ public class MainActivity extends AppCompatActivity {
         if(wifiManager.isWifiEnabled()){
             WifiInfo wifiInfo = wifiManager.getConnectionInfo();
             if (String.valueOf(wifiInfo.getSupplicantState()).equals("COMPLETED")) {
-                x = x + "Name: " + wifiInfo.getSSID() + "Strength: " + wifiInfo.getRssi() +"\n";
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy:MM:dd_HH:mm:ss");
+                String currentDateandTime = sdf.format(new Date());
+                x = x + "Name: " + wifiInfo.getSSID() + "Strength: " + wifiInfo.getRssi() +" T: "+currentDateandTime+"\n";
                 textView4.setText(x);
                 //Toast.makeText(this, x + "",Toast.LENGTH_SHORT).show();
             } else {

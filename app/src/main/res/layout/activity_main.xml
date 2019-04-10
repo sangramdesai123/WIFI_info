@@ -111,7 +111,7 @@
         android:layout_marginRight="28dp"
         android:layout_marginBottom="8dp"
         android:text="@string/load"
-        android:onClick="load"
+        android:onClick="display"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
