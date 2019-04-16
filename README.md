@@ -2,30 +2,20 @@
 
 ------------------------------------------
 ### Activity:
-1. Login with Facebook
-2. Login with Google
-3. Login with Instagram
-4. Login with Linkedin
-5. Send the mail using PHP
+1. Scan all wifi
+2. connect to wifi
+3. find the signal strength
+4. store the data in file
+5. open file in new intent
 ------------------------------------------
 ### Prerequisites
 
 #### What things you need to install the software and how to install them
 
-#### 1. XAMMP 
+#### 1. File manager
 
-    Link to download: https://www.apachefriends.org/download.html
+    any file manger which can be use to read files
     
-#### 2. Google Account
-
-    Google Sign-In into your website, you must create a client ID
-    
-    https://developers.google.com/identity/sign-in/web/sign-in
-
-
-    
-
- 
 ------------------------------------------
 ![Home Page ](https://github.com/sangramdesai123/Social_Media_Api/blob/master/1.JPG)
 ------------------------------------------
