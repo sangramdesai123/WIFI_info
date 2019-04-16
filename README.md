@@ -17,7 +17,7 @@
     any file manger which can be use to read files
     
 ------------------------------------------
-![Home Page ](https://github.com/sangramdesai123/wifi/blob/master/1.JPG)
+![Wifi](https://github.com/sangramdesai123/wifi/blob/master/1.JPG)
 ------------------------------------------
 
 ### Contributing
