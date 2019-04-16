@@ -17,7 +17,7 @@
     any file manger which can be use to read files
     
 ------------------------------------------
-![Home Page ](https://github.com/sangramdesai123/Social_Media_Api/blob/master/1.JPG)
+![Home Page ](https://github.com/sangramdesai123/wifi/blob/master/1.JPG)
 ------------------------------------------
 
 ### Contributing
@@ -27,15 +27,4 @@
 ------------------------------------------
 ### Note
 
-- This project have  `login and mail api code`
-
-------------------------------------------
-
-
-#### For gmail using PHPmailer
-
-    YouTube Link : https://www.youtube.com/watch?v=DPGfNYkTkJ0
-    
-    GitHub Link  : https://github.com/PHPMailer/PHPMailer
-    
-    StackOverflow: https://stackoverflow.com/questions/3477766/phpmailer-smtp-error-could-not-connect-to-smtp-host
+- This project is made for MCAN lab for `getting wifi info`
