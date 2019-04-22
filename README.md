@@ -1,6 +1,5 @@
 # WIFI_info
 
-------------------------------------------
 ### Activity:
 1. Scan all wifi
 2. connect to wifi
