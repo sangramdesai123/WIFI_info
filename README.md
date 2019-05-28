@@ -1,7 +1,7 @@
 # WIFI_info
 
 ### Activity:
-1. Scan all wifi
+1. Scan all wifi in network
 2. connect to wifi
 3. find the signal strength
 4. store the data in file
