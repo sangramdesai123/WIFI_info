@@ -26,4 +26,4 @@
 ------------------------------------------
 ### Note
 
-- This project is made for MCAN lab for `getting wifi info`
+- This project (app) is made for MCAN lab for `getting wifi info`
